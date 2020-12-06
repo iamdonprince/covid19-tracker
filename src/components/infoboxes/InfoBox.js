@@ -1,18 +1,32 @@
 import { Card, CardContent, Typography } from "@material-ui/core";
+import numeral from "numeral";
 import React from "react";
 import "./info.css";
-function InfoBox({ title, cases, total }) {
+
+import { numFormated } from "../../utile";
+
+function InfoBox({ title, cases, total, isDeaths, isGreen, onClick, active }) {
   return (
-    <>
+    <div
+      className={`info__box ${active && "infoBox--selected"} ${
+        isGreen && "recovered"
+      } ${isDeaths && "deaths"}`}
+    >
       {/* info coronavirus cases */}
-      <Card className="card" variant="outlined">
+      <Card className="card" variant="outlined" onClick={onClick}>
         <CardContent>
-          <Typography className="card__title" color="textSecondary">
+          <Typography className="infoBox__title" color="textSecondary">
             {title}
           </Typography>
-          <h2 className="card__cases">+{cases}</h2>
-          <Typography color="textSecondary" className="card__total">
-            {total} Total
+          <h2
+            className={`infoBox__cases  ${
+              title === "Recovered" ? "infoBox--green" : ""
+            }`}
+          >
+            {numFormated(cases)}
+          </h2>
+          <Typography color="textSecondary" className="infoBox__total">
+            {numeral(total).format("0,0")} Total
           </Typography>
         </CardContent>
       </Card>
@@ -33,7 +47,7 @@ function InfoBox({ title, cases, total }) {
         <h5>+2000</h5>
         <h5>1.5m total</h5>
       </div>{" "} */}
-    </>
+    </div>
   );
 }
 

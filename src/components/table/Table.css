@@ -1,10 +1,14 @@
 .table {
   margin-top: 20px;
   overflow: scroll;
+
   height: 400px;
   color: #6a5d5d;
   background-color: white;
   overflow-x: hidden;
+}
+table {
+  width: 100%;
 }
 tr:nth-child(even) {
   background-color: #f5f6fa;

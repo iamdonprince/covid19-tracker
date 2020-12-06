@@ -1,3 +1,52 @@
-.card {
-  margin-top: 10px;
+.info__box {
+  flex: 1;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.info__box:not(:last-child) {
+  margin-right: 10px;
+}
+
+.infoBox__cases {
+  color: #cc1034;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.infoBox--selected .card {
+  background-color: #cc103225;
+}
+.recovered .card {
+  box-sizing: border-box;
+  background-color: rgba(172, 255, 47, 0.24);
+}
+.deaths {
+  box-sizing: border-box;
+  background-color: #fb434321;
+}
+.infoBox--green {
+  color: lightgreen !important;
+}
+.infoBox__total {
+  color: #6c757d;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  margin-top: 15px !important;
+}
+
+@media (max-width: 400px) {
+  .infoBox__title {
+    font-size: 1.1rem !important;
+  }
+  .infoBox__total {
+    font-size: 0.8rem !important;
+    margin-top: 10px !important;
+  }
+  .infoBox__cases {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
 }
