@@ -48,6 +48,15 @@ body {
 .lineGraph {
   flex-grow: 1 !important;
 }
+/* body.light-mode {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+body.dark-mode {
+  background-color: #1a1919;
+  color: rgb(245, 245, 245);
+} */
 @media (max-width: 990px) {
   .App {
     flex-direction: column;

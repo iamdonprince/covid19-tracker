@@ -31,8 +31,9 @@ function ShowDataOnMap({ data, casesType }) {
   //   }, [casesType]);
 
   if (casesType) {
-    return data.map((country) => (
+    return data.map((country, i) => (
       <Circle
+        key={i}
         center={[country.countryInfo.lat, country.countryInfo.long]}
         color={casesTypeColors[casesType].hex}
         fillColor={casesTypeColors[casesType].hex}

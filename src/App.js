@@ -14,6 +14,7 @@ import Table from "./components/table/Table";
 import { sortData } from "./utile";
 import LineGraph from "./components/LineGraph";
 import "leaflet/dist/leaflet.css";
+import DarkModeToggle from "./components/DarkModeToggle";
 function App() {
   const [countries, setCountries] = useState([]);
   const [tableData, setTableDat] = useState([]);
@@ -55,7 +56,7 @@ function App() {
           id: country.countryInfo._id,
         };
       });
-      console.log(responce);
+
       const sorted = sortData(responce.data);
       setTableDat(sorted);
       setCountryMap(responce.data);
@@ -104,6 +105,8 @@ function App() {
 
         <div className="app__header">
           <h1 className="app__title">COVID-19 TRACKER</h1>
+          {/* dark mode not implited */}
+          {/* <DarkModeToggle></DarkModeToggle> */}
           <FormControl className="app__drowpdown">
             <Select
               className="dropdown__select"
